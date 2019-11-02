@@ -3,7 +3,7 @@ Type=Application
 Name=Sysglance
 Icon=sysglance
 Comment=Simple and universal Linux utility for generating a system report for the host system
-Exec=sysglance
+Exec=appdir/usr/bin/sysglance.sh
 Categories=System;
 Terminal=true
 
