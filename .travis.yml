@@ -1,3 +1,6 @@
+language: bash
+dist: dico
+
 script:
   - mkdir -p appdir/usr/bin ; cp usr/bin/sysglance.sh ./appdir/usr/bin/
   - mkdir -p appdir/usr/share/applications ; cp usr/share/applications/sysglance.desktop ./appdir/usr/share/applications/
