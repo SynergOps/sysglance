@@ -6,6 +6,7 @@ script:
   - mkdir -p Sysglance.AppDir/usr/share/applications ; cp sysglance.desktop Sysglance.AppDir/usr/share/applications/
   - mkdir -p Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps ; cp sysglance.png Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps/
   - cp AppRun Sysglance.AppDir
+  - cp sysglance.desktop Sysglance.AppDir
   - wget -c -nv "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
   - chmod a+x appimagetool-x86_64.AppImage
   #- export VERSION=$(date +"%Y%m%d%k%M") # if I need a version I will use this for naming the file
