@@ -46,13 +46,13 @@ echo ""
 echo "$(tput bold)Uptime and system load:$(tput sgr0)"
 uptime
 echo ""
-# Currently logged in users:
-echo "$(tput bold)Logged in users:$(tput sgr0)"
-who
-echo ""
 # Users available:
 echo "$(tput bold)Available User Accounts:$(tput sgr0)"
 lslogins -u
+echo ""
+# Currently logged in users:
+echo "$(tput bold)Logged in users:$(tput sgr0)"
+who
 sleep 1
 echo ""
 #----------------------------------------------------------
