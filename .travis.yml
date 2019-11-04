@@ -2,20 +2,15 @@ language: bash
 dist: dico
 
 script:
-  #- mkdir -p Sysglance.AppDir/usr/bin ; cp usr/bin/sysglance.sh ./appdir/usr/bin/
-  #- mkdir -p appdir/usr/share/applications ; cp usr/share/applications/sysglance.desktop ./appdir/usr/share/applications/
-  #- mkdir -p appdir/usr/share/icons/hicolor/256x256/apps ; cp usr/share/icons/sysglance.png ./appdir/usr/share/icons/hicolor/256x256/apps/
-  #- wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
+  - mkdir -p Sysglance.AppDir/usr/bin ; cp sysglance.sh ./usr/bin/
+  - mkdir -p Sysglance.AppDir/usr/share/applications ; cp sysglance.desktop ./appdir/usr/share/applications/
+  - mkdir -p Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps ; cp sysglance.png ./appdir/usr/share/icons/hicolor/256x256/apps/
   - wget -c -nv "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
   - chmod a+x appimagetool-x86_64.AppImage
-  #- export VERSION=$(date +"%Y%m%d%k%M") # linuxdeployqt uses this for naming the file
-  #- ./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -bundle-non-qt-libs
-  #- ./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop -appimage
+  #- export VERSION=$(date +"%Y%m%d%k%M") # if I need a version I will use this for naming the file
   - ARCH=x86_64 ./appimagetool-x86_64.AppImage Sysglance.AppDir Sysglance-x86_64.AppImage
-  - chmod a+x Sysglance-x86_64.AppImage
+  #- chmod a+x Sysglance-x86_64.AppImage # needs investigation
 after_success:
-  #- find appdir -executable -type f -exec ldd {} \; | grep " => /usr" | cut -d " " -f 2-3 | sort | uniq
-  # - ls -lh out/* # Assuming you have some files in out/ that you would like to upload
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - bash upload.sh Sysglance-x86_64.AppImage
 
