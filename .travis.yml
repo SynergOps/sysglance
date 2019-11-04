@@ -3,8 +3,8 @@ dist: dico
 
 script:
   - mkdir -p Sysglance.AppDir/usr/bin ; cp sysglance.sh Sysglance.AppDir/usr/bin/
-  - mkdir -p Sysglance.AppDir/usr/share/applications ; cp sysglance.desktop Sysglance.AppDir/usr/share/applications
-  - mkdir -p Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps ; cp sysglance.png Sysglance.AppDir/usr/share/icons/hicolor/256x256/apps/
+  - mkdir -p Sysglance.AppDir/usr/share/applications ; cp sysglance.desktop Sysglance.AppDir/usr/share/applications/
+  - mkdir -p Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps ; cp sysglance.png Sysglance.AppDir/usr/share/icons/hicolor/128x128/apps/
   - wget -c -nv "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
   - chmod a+x appimagetool-x86_64.AppImage
   #- export VERSION=$(date +"%Y%m%d%k%M") # if I need a version I will use this for naming the file
