@@ -27,6 +27,11 @@ You can run Sysglance with
 ```bash
 ./Sysglance*.AppImage
 ```
+Or you can save the output to a text file for further investigation
+
+```bash
+./Sysglance*.AppImage > sysglance-report.txt
+```
 
 ## Stay up to date on releases
 
