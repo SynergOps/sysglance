@@ -70,7 +70,7 @@ echo ""
 box_out 'Hardware information'
 # Fetch the current version of the pci.ids file from the primary distribution site and install it
 echo "$(tput bold)Fetching the latest hardware database info:$(tput sgr0)"
-update-pciids -q
+update-pciids
 # CPU Info
 echo "$(tput bold)CPU information:$(tput sgr0)"
 grep 'vendor' /proc/cpuinfo | uniq
