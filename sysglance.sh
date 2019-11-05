@@ -64,7 +64,7 @@ grep 'model name' /proc/cpuinfo | uniq
 echo "CPU Threads     : $(grep -c 'processor' /proc/cpuinfo)"
 # GPU Info
 echo "$(tput bold)GPU information:$(tput sgr0)"
-lspci -k | grep 'VGA'
+lspci | grep -i 'vga\|3d\|2d'
 # Network Adapter
 echo "$(tput bold)Network Adapter:$(tput sgr0)"
 lspci | grep 'Network controller'
