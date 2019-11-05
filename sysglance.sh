@@ -39,7 +39,7 @@ function countdown() {
 if [[ $EUID -ne 0 ]] ; then
     clear
     echo ""
-    box_out 'Where is the Master?' '---------------------------' '' 'Sysglnce must be run as root user' 'or a user with sudo privileges.' 'Now I will just exit...' 1>&2
+    box_out 'Where is the Master?' '---------------------------' '' 'Sysglance must be run as root user' 'or a user with sudo privileges.' 'Now I will just exit...' 1>&2
     echo ""
     sleep 2
     exit 1
