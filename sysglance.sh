@@ -102,6 +102,9 @@ box_out 'Disk Space analysis'
 echo "$(tput bold)Disk Partitions:$(tput sgr0)"
 lsblk -e252 -e7
 echo ""
+echo "$(tput bold)Partition Types:$(tput sgr0)"
+fdisk -l | grep "/dev/\|Type" | grep -v -e "loop" -e "fuse" -e "zram"
+echo ""
 echo "$(tput bold)Disk Usage:$(tput sgr0)"
 df -h -x squashfs -x tmpfs -x devtmpfs -x fuse
 sleep 1
