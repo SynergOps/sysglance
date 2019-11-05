@@ -71,21 +71,26 @@ box_out 'Hardware information'
 # Fetch the current version of the pci.ids file from the primary distribution site and install it
 echo "$(tput bold)Fetching the latest hardware database info:$(tput sgr0)"
 update-pciids
+echo ""
 # CPU Info
 echo "$(tput bold)CPU information:$(tput sgr0)"
 grep 'vendor' /proc/cpuinfo | uniq
 grep 'model name' /proc/cpuinfo | uniq
 echo "CPU Threads     : $(grep -c 'processor' /proc/cpuinfo)"
+echo ""
 # GPU Info
 echo "$(tput bold)GPU information:$(tput sgr0)"
 lspci | grep -i 'vga\|3d\|2d'
+echo ""
 # Network Adapter
 echo "$(tput bold)Network Adapter:$(tput sgr0)"
 lspci | grep 'Network controller'
 lspci | grep 'Ethernet controller'
+echo ""
 # USB Info
 echo "$(tput bold)USB Devices:$(tput sgr0)"
 lsusb
+echo ""
 # Hard disk info
 echo "$(tput bold)Hard Disks:$(tput sgr0)"
 fdisk -l | grep -i "Disk" | grep -v -e "loop" -e "fuse" -e "zram"
