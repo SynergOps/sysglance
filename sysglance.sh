@@ -87,7 +87,8 @@ lspci | grep 'Ethernet controller'
 echo "$(tput bold)USB Devices:$(tput sgr0)"
 lsusb
 # Hard disk info
-# -- TO DO --
+echo "$(tput bold)Hard Disks:$(tput sgr0)"
+fdisk -l | grep -i "Disk" | grep -v -e "loop" -e "fuse" -e "zram"
 sleep 1
 echo ""
 #----------------------------------------------------------
