@@ -158,7 +158,8 @@ ip addr show |
     '
 echo ""
 echo "$(tput bold)Public IP Address:$(tput sgr0)"
-dig @resolver1.opendns.com ANY myip.opendns.com +short
+curl checkip.amazonaws.com
+#dig @resolver1.opendns.com ANY myip.opendns.com +short <-- need invest why it doesn't work on Arch
 echo ""
 # Protocol, process and ports used by your system
 echo "$(tput bold)List of Processes and open Ports:$(tput sgr0)"
