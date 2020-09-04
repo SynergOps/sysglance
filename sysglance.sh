@@ -1,5 +1,5 @@
 #!/bin/bash
-# Simple Linux utility for generating a system report for the host system
+# Utility for collecting information about the hardware and the operating system by generating a simple report.
 # License: GPL3
 # Copyright: Salih Emin @ https://utappia.org - https://cerebrux.net
 #---------------------------------------------------------------------------
@@ -39,7 +39,7 @@ function countdown() {
 if [[ $EUID -ne 0 ]] ; then
     clear
     echo ""
-    box_out 'Where is the Administrator ?' '---------------------------' '' 'Sysglance must be run as root user' 'or a user with sudo privileges.' 'Now I will just exit...' 1>&2
+    box_out 'Got ROOT ?' '---------------------------' '' 'Sysglance must be run as root user' 'or a user with sudo privileges.' 'Now I will just exit...' 1>&2
     echo ""
     sleep 2
     exit 1
