@@ -163,7 +163,7 @@ curl checkip.amazonaws.com
 echo ""
 # Protocol, process and ports used by your system
 echo "$(tput bold)List of Processes and open Ports:$(tput sgr0)"
-netstat -tulpn
+ss -tulpn
 echo ""
 # Network connections that are either ESTABLISED or in LISTENING mode
 echo "$(tput bold)List of network connections opened by processes:$(tput sgr0)"
