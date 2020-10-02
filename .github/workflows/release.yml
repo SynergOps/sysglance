@@ -5,17 +5,20 @@ on:
       - "v*"
 
 jobs:
-  # Publish sysglance to AUR
-  aur_release:
+  aur-publish:
     runs-on: ubuntu-latest
-    name: Create AUR release
-    #needs: github_release # The -bin version downloads and shasums it
     steps:
-      - name: Build | Publish AUR package
-        uses: ATiltedTree/create-aur-release@v1
+      - uses: actions/checkout@v2
+
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@master
         with:
-          package_name: sysglance
+          pkgname: sysglance
+          pkgbuild: ./pkgbuild/PKGBUILD
           commit_username: ${{ secrets.AUR_USERNAME }}
           commit_email: ${{ secrets.AUR_EMAIL }}
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
-          commit_message: Update AUR package
+          #commit_message: Update AUR package
+          ssh_keyscan_types: rsa,dsa,ecdsa,ed25519
+          commit_message: ${{ needs.create_release.outputs.release_tag }}
+          force_push: 'true'
