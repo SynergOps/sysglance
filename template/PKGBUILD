@@ -1,0 +1,13 @@
+# Maintainer: Cerebrux <mail@cerebrux.net>
+pkgdesc="Utility for collecting information about the hardware and the operating system by generating a simple report."
+pkgrel=1
+arch=('any')
+url="https://github.com/Utappia/sysglance"
+license=('GPL3')
+depends=('pciutils' 'usbutils' 'util-linux' 'curl')
+
+package() {
+	cd "$srcdir/sysglance-$pkgver"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -Dm755 sysglance.sh "$pkgdir/usr/bin/sysglance"
+}
