@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  # Publish sysglance to AUR
+  aur_release:
+    runs-on: ubuntu-latest
+    name: Create AUR release
+    #needs: github_release # The -bin version downloads and shasums it
+    steps:
+      - name: Build | Publish AUR package
+        uses: ATiltedTree/create-aur-release@v1
+        with:
+          package_name: sysglance
+          commit_username: "Starship Bot"
+          commit_email: starship.bot.noreply@gmail.com
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
