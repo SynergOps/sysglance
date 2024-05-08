@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/pkexec /bin/bash
 # Utility for collecting information about the hardware and the operating system by generating a simple report.
 # License: GPL3
 # Copyright: Salih Emin @ https://utappia.org - https://cerebrux.net
